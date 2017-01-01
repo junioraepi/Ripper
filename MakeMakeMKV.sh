@@ -11,7 +11,7 @@ tar xvf fdk-aac-0.1.4.tar.gz
 cd fdk-aac-0.1.4
 ./configure --prefix=/usr --disable-static
 make
-sudo make install
+make install
 cd ..
 
 # Compile ffmpeg
@@ -19,22 +19,22 @@ git clone git://source.ffmpeg.org/ffmpeg.git ffmpeg
 cd ffmpeg
 ./configure --prefix=/tmp/ffmpeg --enable-static --disable-shared --enable-pic --disable-yasm --enable-libfdk-aac
 make
-sudo make install
+make install
 cd ..
 
 # Compile MakeMKV
-wget http://www.makemkv.com/download/makemkv-bin-1.9.9.tar.gz
-wget http://www.makemkv.com/download/makemkv-oss-1.9.9.tar.gz
-tar xvf makemkv-bin-1.9.9.tar.gz
-tar xvf makemkv-oss-1.9.9.tar.gz
+wget http://www.makemkv.com/download/makemkv-bin-1.10.4.tar.gz
+wget http://www.makemkv.com/download/makemkv-oss-1.10.4.tar.gz
+tar xvf makemkv-bin-1.10.4.tar.gz
+tar xvf makemkv-oss-1.10.4.tar.gz
 
 # Compile MakeMKV-oss
-cd makemkv-oss-1.9.9
+cd makemkv-oss-1.10.4
 PKG_CONFIG_PATH=/tmp/ffmpeg/lib/pkgconfig ./configure
 make
-sudo make install
+make install
 
 # Compile MakeMKV-bin
-cd ../makemkv-bin-1.9.9
+cd ../makemkv-bin-1.10.4
 make
-sudo make install
+make install
