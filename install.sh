@@ -7,13 +7,8 @@ echo 'deb http://download.videolan.org/pub/debian/stable/ /' >> /etc/apt/sources
 echo 'deb-src http://download.videolan.org/pub/debian/stable/ /' >> /etc/apt/sources.list
 
 apt-get update
-apt-get install -y software-properties-common
-
-add-apt-repository ppa:heyarje/makemkv-beta
-add-apt-repository ppa:stebbins/handbrake-releases
-apt-get update
-
-apt-get -y install libdvdcss2 dvdbackup handbrake-cli libavcodec-extra
+apt-get install libdvdcss2
+apt-get -y install dvdbackup handbrake-cli libavcodec-extra
 
 # Setup destination
 mkdir /data/

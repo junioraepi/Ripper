@@ -18,4 +18,18 @@ function rip_dvd() {
     eject $SOURCE_DRIVE
 }
 
+function detect_disk() {
+    echo "Detecting Disk"
+    blkid $SOURCE_DRIVE
+    DISK_INSERTED=$?
+    if [ "$DISK_INSERTED" = "0" ] then
+        echo "  Disk Found"
+    else
+        echo "  Disk Not Detected"
+        exit 1
+    fi
+}
+
+echo "Starting Ripper..."
+detect_disk
 rip_dvd
